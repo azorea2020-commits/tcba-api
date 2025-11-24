@@ -8,8 +8,28 @@
     "render-build": "echo no build step"
   },
   "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
-    "express": "^4.19.2",
+    "dotenv": "^17.2.3",
+    "express": "^4.21.2",
+    "express-session": "^1.18.2",
+    "passport": "^0.7.0",
+    "passport-facebook": "^3.0.0",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-local": "^1.0.0",
     "sqlite3": "^5.1.7"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azorea2020-commits/tcba-api5.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/azorea2020-commits/tcba-api5/issues"
+  },
+  "homepage": "https://github.com/azorea2020-commits/tcba-api5#readme"
 }
