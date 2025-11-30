@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TCBA Member Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f6f6e9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-box {
+            background: white;
+            padding: 28px;
+            border-radius: 8px;
+            width: 320px;
+            box-shadow: 0px 0px 12px rgba(0,0,0,0.15);
+        }
+        .login-box h2 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 18px;
+        }
+        .login-box input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            margin-bottom: 14px;
+            border: 1px solid #999;
+            border-radius: 4px;
+        }
+        .login-box button {
+            width: 100%;
+            padding: 10px;
+            background: #e0b400;
+            border: none;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .login-box button:hover {
+            background: #c49900;
+        }
+        #loginStatus {
+            margin-top: 12px;
+            color: red;
+            text-align: center;
+            min-height: 20px;
+        }
+        .signup-link {
+            text-align: center;
+            margin-top: 16px;
+        }
+        .signup-link a {
+            color: #0047b3;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-box">
+        <h2>TCBA Login</h2>
+
+        <form onsubmit="doLogin(event)">
+            <input id="loginUser" type="text" placeholder="Username or Email" autocomplete="off">
+            <input id="loginPass" type="password" placeholder="Password">
+
+            <button type="submit">Log In</button>
+        </form>
+
+        <div id="loginStatus"></div>
+
+        <div class="signup-link">
+            <a onclick="goSignup()">New member? Sign up here</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

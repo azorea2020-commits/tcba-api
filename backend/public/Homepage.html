@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TCBA • Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --brand:#ffcc33;
+      --ink:#111;
+      --muted:#666;
+      --card:#fff;
+      --bg:#fafafa;
+      --radius:14px;
+      --shadow:0 8px 20px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+    /* NAV */
+    header{
+      position:sticky; top:0; z-index:10;
+      background:var(--brand); border-bottom:1px solid rgba(0,0,0,.08);
+    }
+    .nav{
+      max-width:1100px; margin:0 auto; display:flex; align-items:center; gap:14px;
+      padding:12px 20px;
+    }
+    .brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.3px}
+    .brand-badge{
+      width:34px; height:34px; border-radius:50%; display:grid; place-items:center; background:#000; color:#ffd54d; font-weight:800;
+      box-shadow:0 2px 8px rgba(0,0,0,.15);
+    }
+    nav a{
+      text-decoration:none; color:#000; font-weight:600; padding:8px 10px; border-radius:10px;
+    }
+    nav a.active{background:rgba(0,0,0,.08)}
+    .spacer{flex:1}
+    .btn{
+      background:#000; color:#fff; text-decoration:none; padding:10px 14px; border-radius:10px; font-weight:700;
+      box-shadow:0 5px 14px rgba(0,0,0,.18);
+    }
+
+    /* HERO */
+    .wrap{max-width:1100px; margin:0 auto; padding:24px 20px 40px}
+    .hero{
+      background:linear-gradient(135deg,#fff 0%, #fff6cc 100%);
+      border:1px solid #f0e6a6; border-radius:var(--radius); padding:28px; box-shadow:var(--shadow);
+    }
+    .hero h1{margin:0 0 8px; font-size:28px}
+    .hero p{margin:0; color:var(--muted)}
+    .cta-row{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:18px}
+    .card{
+      background:var(--card); border:1px solid #eee; border-radius:var(--radius); padding:18px; text-decoration:none; color:inherit;
+      box-shadow:var(--shadow); display:flex; flex-direction:column; gap:8px; transition:transform .1s ease, box-shadow .1s ease;
+    }
+    .card:hover{transform:translateY(-2px); box-shadow:0 10px 24px rgba(0,0,0,.12)}
+    .card h3{margin:0}
+    .card p{margin:0; color:var(--muted); font-size:14px}
+    .pill{display:inline-block; font-size:12px; padding:4px 8px; border-radius:999px; background:#000; color:#fff; font-weight:700}
+
+    @media (max-width:900px){
+      .cta-row{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:520px){
+      .cta-row{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <div class="brand-badge">🐝</div>
+        <div>TCBA</div>
+      </div>
+      <nav>
+        <a href="homepage.html" class="active">Home</a>
+        <a href="education.html">Education</a>
+        <a href="news.html">News</a>
+        <a href="teen-news.html">Teens</a>
+        <a href="welcome.html">Videos</a>
+      </nav>
+      <div class="spacer"></div>
+      <a class="btn" href="login.html">Sign in</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main class="wrap">
+    <section class="hero">
+      <h1>Welcome to the Treasure Coast Bee Association</h1>
+      <p>Learn, watch, and stay current on all things bees — inside one simple app.</p>
+
+      <div class="cta-row">
+        <a class="card" href="education.html">
+          <span class="pill">Learn</span>
+          <h3>Education</h3>
+          <p>Beginner to advanced guides, safe handling, hive care, and more.</p>
+        </a>
+
+        <a class="card" href="news.html">
+          <span class="pill">Read</span>
+          <h3>Bee News</h3>
+          <p>Current research, regional updates, and association announcements.</p>
+        </a>
+
+        <a class="card" href="teen-news.html">
+          <span class="pill">Youth</span>
+          <h3>Teens</h3>
+          <p>Teen-friendly bee stories and hands-on videos to spark curiosity.</p>
+        </a>
+
+        <a class="card" href="welcome.html">
+          <span class="pill">Watch</span>
+          <h3>Videos</h3>
+          <p>Hand-picked bee videos that play right inside the app.</p>
+        </a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

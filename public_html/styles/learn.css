@@ -1,0 +1,64 @@
+const minorVideos = [
+  {
+    title: "Bee Safety for Kids",
+    desc: "Learn how to safely observe bees and understand their behavior.",
+    src: "https://www.youtube.com/embed/eb9nQ1JjM8g"
+  },
+  {
+    title: "How Honeybees Make Honey",
+    desc: "A fun introduction to the honey-making process.",
+    src: "https://www.youtube.com/embed/jHrb9AgR9tA"
+  },
+  {
+    title: "Pollination Explained",
+    desc: "Discover how bees help flowers and crops grow!",
+    src: "https://www.youtube.com/embed/xsBkpz5JbcM"
+  }
+];
+
+const adultVideos = [
+  {
+    title: "Hive Inspection Basics",
+    desc: "Learn the proper steps for inspecting your bee colony.",
+    src: "https://www.youtube.com/embed/C_PF62H5J6g"
+  },
+  {
+    title: "How to Extract Honey",
+    desc: "A step-by-step guide for honey extraction safely.",
+    src: "https://www.youtube.com/embed/pWQy8mZVvng"
+  },
+  {
+    title: "Varroa Mite Treatment",
+    desc: "Keep your bees healthy with this guide to mite control.",
+    src: "https://www.youtube.com/embed/xZTCOUvR1qE"
+  }
+];
+
+function loadContent(type) {
+  const videoGallery = document.getElementById("videoGallery");
+  const videoList = document.getElementById("videoList");
+  const title = document.getElementById("galleryTitle");
+  const ageSelect = document.getElementById("ageSelect");
+
+  ageSelect.classList.add("hidden");
+  videoGallery.classList.remove("hidden");
+
+  let list = type === "minor" ? minorVideos : adultVideos;
+  title.innerText =
+    type === "minor"
+      ? "🐝 Beekeeping for Kids & Teens"
+      : "🐝 Beekeeping for Adult Members";
+
+  videoList.innerHTML = "";
+
+  list.forEach(v => {
+    const card = document.createElement("div");
+    card.className = "video-item";
+    card.innerHTML = `
+      <iframe src="${v.src}" frameborder="0" allowfullscreen></iframe>
+      <h3>${v.title}</h3>
+      <p>${v.desc}</p>
+    `;
+    videoList.appendChild(card);
+  });
+}

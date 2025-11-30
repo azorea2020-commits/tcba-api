@@ -1,0 +1,119 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TCBA Educational Center</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f3dd;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background: #e0b400;
+            padding: 16px;
+            text-align: center;
+            font-size: 26px;
+            font-weight: bold;
+            color: black;
+            box-shadow: 0px 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 24px auto;
+            background: white;
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 12px rgba(0,0,0,0.15);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .section {
+            margin-bottom: 28px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .section h3 {
+            margin: 0 0 10px 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 360px;
+            border: none;
+            margin-top: 12px;
+        }
+
+        button {
+            margin-top: 30px;
+            padding: 12px 20px;
+            background: #009951;
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #007f43;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        TCBA Educational Center
+    </div>
+
+    <div class="container">
+
+        <h2>Learn, Explore, and Grow With the TCBA</h2>
+
+        <p>
+            Welcome to the TCBA Educational Center.  
+            This section features videos, beginner guides, hive management tips, and
+            everything you need to become a better beekeeper.
+        </p>
+
+        <div class="section">
+            <h3>Beginner Beekeeping – Video Lesson</h3>
+            <iframe src="https://www.youtube.com/embed/M7z4T2h2xJ0" allowfullscreen></iframe>
+        </div>
+
+        <div class="section">
+            <h3>How to Inspect a Hive</h3>
+            <iframe src="https://www.youtube.com/embed/C0jKj2OLW28" allowfullscreen></iframe>
+        </div>
+
+        <div class="section">
+            <h3>Bee Behavior & Colony Health</h3>
+            <iframe src="https://www.youtube.com/embed/9e-1Klb_3i4" allowfullscreen></iframe>
+        </div>
+
+        <button onclick="goHome()">Return to Homepage</button>
+
+    </div>
+
+    <script>
+        function goHome() {
+            window.location.href = "homepage.html";
+        }
+    </script>
+
+</body>
+</html>

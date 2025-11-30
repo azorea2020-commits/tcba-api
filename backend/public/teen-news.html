@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TCBA • Teen News</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--brand:#ffcc33;--ink:#111;--muted:#666;--card:#fff;--bg:#fafafa;--radius:14px;--shadow:0 8px 20px rgba(0,0,0,.08)}
+    *{box-sizing:border-box} html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+    header{position:sticky;top:0;z-index:10;background:var(--brand);border-bottom:1px solid rgba(0,0,0,.08)}
+    .nav{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:14px;padding:12px 20px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800}
+    .brand-badge{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#000;color:#ffd54d;font-weight:800;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+    nav a{text-decoration:none;color:#000;font-weight:600;padding:8px 10px;border-radius:10px}
+    nav a.active{background:rgba(0,0,0,.08)}
+    .spacer{flex:1}.btn{background:#000;color:#fff;text-decoration:none;padding:10px 14px;border-radius:10px;font-weight:700;box-shadow:0 5px 14px rgba(0,0,0,.18)}
+    .wrap{max-width:1100px;margin:0 auto;padding:24px 20px 40px}
+    h1{margin:0 0 8px}.muted{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:1fr;gap:18px}
+    @media(min-width:900px){.grid{grid-template-columns:1fr 1fr}}
+    .card{background:var(--card);border:1px solid #eee;border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .video{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+    .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    h2{margin:0 0 10px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand"><div class="brand-badge">🐝</div><div>TCBA</div></div>
+      <nav>
+        <a href="homepage.html">Home</a>
+        <a href="education.html">Education</a>
+        <a href="news.html">News</a>
+        <a href="teen-news.html" class="active">Teens</a>
+        <a href="welcome.html">Videos</a>
+      </nav>
+      <div class="spacer"></div>
+      <a class="btn" href="login.html">Sign in</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1>Teen News</h1>
+    <p class="muted">Quick, visual, and fun — bee topics made for teens and classrooms.</p>
+
+    <section class="card">
+      <h2>Trending for Teens</h2>
+      <div class="grid">
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/JXHG9JXskOE" title="Honey Farm (kid/teen friendly)" allowfullscreen></iframe>
+        </div>
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/7B5afs3xIXY" title="Bee Basics" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Get Inspired</h2>
+      <div class="grid">
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/3Xl0Qr0uXuY" title="Why Bees Matter" allowfullscreen></iframe>
+        </div>
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/n7JpZzYJi_g" title="Beekeeping 101" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

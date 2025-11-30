@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Education • TCBA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root { --brand:#FFC61E; --ink:#111; --muted:#666; --card:#fff; --bg:#fafafa; --radius:12px; --shadow:0 8px 20px rgba(0,0,0,.06) }
+    * { box-sizing: border-box }
+    html, body { margin:0; padding:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:var(--ink); background:var(--bg) }
+
+    /* Top bar */
+    .nav { position:sticky; top:0; z-index:10; background:var(--brand); border-bottom:1px solid #e8b700 }
+    .nav .wrap { max-width:1200px; margin:0 auto; display:flex; align-items:center; gap:16px; padding:12px 16px }
+    .nav .brand { font-weight:800 }
+    .nav .spacer { flex:1 }
+    .nav a { color:#000; text-decoration:none; font-weight:600; padding:6px 8px; border-radius:8px }
+    .nav a[aria-current="page"] { background:rgba(0,0,0,.08) }
+
+    /* Page */
+    .container { max-width:1200px; margin:24px auto 40px; padding:0 16px }
+    h1 { margin:0 0 6px }
+    .sub { margin:0 0 18px; color:var(--muted) }
+
+    /* Cards + videos */
+    .grid { display:grid; gap:18px }
+    @media (min-width: 900px) { .grid { grid-template-columns: 1fr 1fr } }
+    .card { background:var(--card); border:1px solid #eee; border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden }
+    .card h2 { margin:16px; font-size:20px }
+    .video { position:relative; width:100%; aspect-ratio:16/9; background:#000 }
+    .video iframe { position:absolute; inset:0; width:100%; height:100%; border:0 }
+    .meta { display:flex; align-items:center; gap:12px; padding:12px 16px; border-top:1px solid #eee; color:#555; font-size:12px }
+    .pill { background:#000; color:#fff; border-radius:999px; padding:4px 10px; font-weight:700; font-size:12px }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <div class="brand">TCBA</div>
+      <a href="/homepage.html">Home</a>
+      <a href="/education.html" aria-current="page">Education</a>
+      <a href="/news.html">News</a>
+      <a href="/teen-news.html">Teens</a>
+      <div class="spacer"></div>
+      <a href="/login.html">Login</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Bee Education</h1>
+    <p class="sub" id="subtext">Three featured videos for first-time visitors. On your next visit, we’ll show fresh picks automatically.</p>
+
+    <section id="videoArea" class="grid"></section>
+  </main>
+
+  <script>
+    /**
+     * First-visit behavior:
+     *  - Show these 3 specific videos (static).
+     * Subsequent visits:
+     *  - Auto-pick fresh videos using YouTube search playlists.
+     * No edits needed from you.
+     */
+
+    // --- STATIC videos for very first visit (already-working IDs) ---
+    const FIRST_VISIT_VIDEOS = [
+      { title: "Bee Biology Basics",             embed: "https://www.youtube.com/embed/7B5afs3xIXY?rel=0&modestbranding=1&playsinline=1" },
+      { title: "Honey Farm (Kid/Teen Friendly)", embed: "https://www.youtube.com/embed/JXHG9JXskOE?rel=0&modestbranding=1&playsinline=1" },
+      { title: "My Garden of a Thousand Bees",   embed: "https://www.youtube.com/embed/YW-dVOgy48o?rel=0&modestbranding=1&playsinline=1" }
+    ];
+
+    // --- FRESH sources used after first visit (search playlists = auto-updating) ---
+    const FRESH_QUERIES = [
+      "beekeeping for beginners",
+      "honey bee biology",
+      "hive inspection tips",
+      "pollinator conservation documentary",
+      "how to start beekeeping",
+      "bee swarm removal education",
+      "queen rearing basics",
+      "varroa mite treatment guidance"
+    ];
+
+    const KEY = "tcbaEduSeenV1";
+
+    const area = document.getElementById("videoArea");
+    const sub = document.getElementById("subtext");
+
+    function shuffle(arr) {
+      const a = arr.slice();
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+
+    function makeCard(title, src, badgeText) {
+      const article = document.createElement("article");
+      article.className = "card";
+      article.innerHTML = `
+        <h2>${title}</h2>
+        <div class="video">
+          <iframe src="${src}" title="${title}" loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+        <div class="meta">
+          <span class="pill">${badgeText}</span>
+        </div>
+      `;
+      return article;
+    }
+
+    function freshEmbedFromQuery(query) {
+      // YouTube "search playlist" embed (auto-updating results)
+      const url = `https://www.youtube.com/embed?listType=search&list=${encodeURIComponent(query)}&rel=0&modestbranding=1&playsinline=1`;
+      return { title: `Trending: ${query}`, embed: url };
+    }
+
+    function renderFirstVisit() {
+      sub.textContent = "Welcome! Enjoy these featured videos. We’ll show fresh picks next time you visit.";
+      FIRST_VISIT_VIDEOS.forEach(v => {
+        area.appendChild(makeCard(v.title, v.embed, "Featured"));
+      });
+      // mark as seen so next visit shows fresh content
+      try { localStorage.setItem(KEY, Date.now().toString()); } catch (_) {}
+    }
+
+    function renderFresh() {
+      sub.textContent = "Fresh auto-picked videos for you. Come back later for a new mix.";
+      const picks = shuffle(FRESH_QUERIES).slice(0, 3).map(freshEmbedFromQuery);
+      picks.forEach(p => area.appendChild(makeCard(p.title, p.embed, "Auto-picked")));
+    }
+
+    // Decide which view to show
+    let seen = false;
+    try { seen = !!localStorage.getItem(KEY); } catch (_) { seen = false; }
+
+    if (!seen) {
+      renderFirstVisit();
+    } else {
+      renderFresh();
+    }
+  </script>
+</body>
+</html>

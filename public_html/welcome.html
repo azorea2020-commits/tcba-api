@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to TCBA!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f3dd;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background: #e0b400;
+            padding: 16px;
+            text-align: center;
+            font-size: 26px;
+            font-weight: bold;
+            color: black;
+            box-shadow: 0px 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 12px rgba(0,0,0,0.15);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        ul {
+            margin-top: 14px;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .below {
+            margin-top: 22px;
+            font-size: 15px;
+        }
+
+        .btn-area {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .btn-area button {
+            padding: 12px 20px;
+            background: #009951;
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .btn-area button:hover {
+            background: #007f43;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        Welcome to the Treasure Coast Bee Association!
+    </div>
+
+    <div class="container">
+        <h2>Your Membership Is Pending Approval</h2>
+
+        <p>
+            Thank you for joining the TCBA!  
+            Your account is being reviewed by our officers.  
+            While you wait, here are some of the benefits and opportunities you gain as a member:
+        </p>
+
+        <ul>
+            <li>Access to monthly meetings, classes, and guest speakers</li>
+            <li>Hands-on education at the TCBA apiary and bee yard</li>
+            <li>Participation in honey extraction demonstrations</li>
+            <li>Volunteer hour credit opportunities for youth and adults</li>
+            <li>Exclusive access to TCBA member resources and documents</li>
+            <li>Beekeeping mentorship programs for all experience levels</li>
+            <li>Discounts on honey, beeswax, and beekeeping equipment</li>
+            <li>Community involvement, outreach, and conservation efforts</li>
+        </ul>
+
+        <p class="below">
+            Once approved, you’ll receive full access to your member homepage,
+            volunteer tracking, education center, teen resources, news feed,
+            and the upcoming TCBA member marketplace.
+        </p>
+
+        <div class="btn-area">
+            <button onclick="goLogin()">Back to Login</button>
+        </div>
+    </div>
+
+    <script>
+        function goLogin() {
+            window.location.href = "login.html";
+        }
+    </script>
+
+</body>
+</html>

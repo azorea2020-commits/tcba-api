@@ -1,0 +1,93 @@
+/* Background setup */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: url("beepics/b1.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Login/Signup box */
+.login-box {
+  position: absolute;
+  top: 50%;
+  right: 5%;                /* keep it on the right side */
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.15);  /* glass effect */
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  width: 350px;
+  max-width: 90%;
+  text-align: center;
+  color: #fff;
+}
+
+/* Titles */
+.login-box h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Input fields */
+.login-box input[type="text"],
+.login-box input[type="email"],
+.login-box input[type="password"] {
+  width: 100%;              /* match box width */
+  max-width: 300px;         /* don’t stretch too far */
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+/* Buttons */
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Primary button */
+.login-box button[type="submit"] {
+  background: #ffcc00;
+  color: #000;
+  font-weight: bold;
+}
+
+.login-box button[type="submit"]:hover {
+  background: #e6b800;
+}
+
+/* Secondary button */
+.login-box button[type="button"] {
+  background: transparent;
+  border: 2px solid #ffcc00;
+  color: #ffcc00;
+  font-weight: bold;
+}
+
+.login-box button[type="button"]:hover {
+  background: #ffcc00;
+  color: #000;
+}
+
+/* Responsive (phones & tablets) */
+@media (max-width: 768px) {
+  .login-box {
+    left: 50%;
+    right: auto;
+    transform: translate(-50%, -50%);   /* center on small screens */
+    width: 90%;
+    max-width: 400px;
+  }
+}

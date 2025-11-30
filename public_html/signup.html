@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TCBA New Member Signup</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f6f6e9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .signup-box {
+            background: white;
+            padding: 28px;
+            border-radius: 8px;
+            width: 380px;
+            box-shadow: 0px 0px 12px rgba(0,0,0,0.15);
+        }
+        .signup-box h2 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 18px;
+        }
+        .signup-box input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            margin-bottom: 14px;
+            border: 1px solid #999;
+            border-radius: 4px;
+        }
+        .signup-box button {
+            width: 100%;
+            padding: 10px;
+            background: #009951;
+            border: none;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            color: white;
+        }
+        .signup-box button:hover {
+            background: #007f43;
+        }
+        .login-link {
+            text-align: center;
+            margin-top: 16px;
+        }
+        .login-link a {
+            color: #0047b3;
+            cursor: pointer;
+        }
+        #signupStatus {
+            margin-top: 12px;
+            color: red;
+            text-align: center;
+            min-height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="signup-box">
+        <h2>TCBA Member Signup</h2>
+
+        <form id="signupForm">
+            <input type="text" id="fullName" placeholder="Full Name" required>
+            <input type="date" id="dob" placeholder="Date of Birth" required>
+            <input type="text" id="address" placeholder="Address" required>
+            <input type="email" id="email" placeholder="Email Address" required>
+            <input type="text" id="phone" placeholder="Phone Number" required>
+            <input type="text" id="username" placeholder="Choose a Username" required>
+            <input type="password" id="password" placeholder="Choose a Password" required>
+
+            <button type="button" onclick="submitSignup()">Create Account</button>
+        </form>
+
+        <div id="signupStatus"></div>
+
+        <div class="login-link">
+            <a onclick="goLogin()">Already have an account? Log in</a>
+        </div>
+    </div>
+
+    <script>
+        function goLogin() {
+            window.location.href = "login.html";
+        }
+
+        function submitSignup() {
+            // Until backend signup API is built, this is a placeholder
+            const status = document.getElementById("signupStatus");
+            status.textContent = "Signup system coming soon. Talk to an officer for approval.";
+        }
+    </script>
+
+</body>
+</html>

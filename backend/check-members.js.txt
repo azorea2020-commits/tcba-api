@@ -1,0 +1,16 @@
+// check-members.js
+const sqlite3 = require("sqlite3").verbose();
+
+const db = new sqlite3.Database("./db/tcba.db");
+
+db.all("SELECT * FROM members", [], (err, rows) => {
+  if (err) {
+    console.error("Error reading members:", err.message);
+  } else if (rows.length === 0) {
+    console.log("✅ Members table exists, but no members yet.");
+  } else {
+    console.log("📋 Members list:");
+    console.table(rows);
+  }
+  db.close();
+});

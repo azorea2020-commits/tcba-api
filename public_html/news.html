@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TCBA Bee News</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2d9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background: #e0b400;
+            padding: 16px;
+            text-align: center;
+            font-size: 26px;
+            font-weight: bold;
+            box-shadow: 0px 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 24px auto;
+            background: white;
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 12px rgba(0,0,0,0.15);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .news-block {
+            margin-bottom: 22px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .news-block h3 {
+            margin: 0 0 6px 0;
+        }
+
+        button {
+            margin-top: 30px;
+            padding: 12px 20px;
+            background: #009951;
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #007f43;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        TCBA Bee News
+    </div>
+
+    <div class="container">
+
+        <h2>Latest Bee-Related News & Updates</h2>
+
+        <div class="news-block">
+            <h3>Bee Magazine – Monthly Bee Articles</h3>
+            <p>Stay updated with beekeeping trends, honeybee science, and community stories.</p>
+            <a href="https://www.beeculture.com" target="_blank">Visit Bee Culture Magazine</a>
+        </div>
+
+        <div class="news-block">
+            <h3>YouTube Bee News</h3>
+            <p>Watch the latest bee updates, hive management tips, and educational videos.</p>
+            <a href="https://www.youtube.com/results?search_query=bee+news" target="_blank">Search Bee News on YouTube</a>
+        </div>
+
+        <div class="news-block">
+            <h3>TCBA Local Announcements</h3>
+            <p>This section will include updates about meetings, events, and club activities.</p>
+            <p>Officers will soon be able to post announcements here.</p>
+        </div>
+
+        <button onclick="goHome()">Return to Homepage</button>
+
+    </div>
+
+    <script>
+        function goHome() {
+            window.location.href = "homepage.html";
+        }
+    </script>
+
+</body>
+</html>
